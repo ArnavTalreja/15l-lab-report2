@@ -1,6 +1,6 @@
 # PART 1: Server StringServer
 Following is the java code for StringServer:
-```
+```Java
 import java.io.IOException;
 import java.net.URI;
 

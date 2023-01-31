@@ -68,3 +68,55 @@ The String `message` which had the string `My name is Arnav`in it, now has `This
 
 # PART 2: Fixing 🐛s!
 
+## 1. Error inducing input:-
+```Java
+public class ArrayTests {
+	@Test 
+	public void testReverseInPlace() {
+    int[] input1 = {1,2,3,4};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{4,3,2,1}, input1);
+	}
+```
+## 2. Input which doesn't induce faliure:-
+```Java
+public class ArrayTests {
+	@Test 
+	public void testReverseInPlace() {
+    int[] input1 = {6,8,0,8,6};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{6,8,0,8,6}, input1);
+	}
+```
+## 3. Symptom:-
+![Image](s3.png)
+## 4. Incorrect code:-
+```Java
+public class ArrayExamples {
+
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+  ```
+  
+  ## 5. Corrected Code:-
+  ```Java
+  public class ArrayExamples {
+
+  // Changes the input array to be in reversed order
+  static void reverseInPlace(int[] arr) {
+    int temp = 0;
+    for(int i = 0; i < arr.length/2; i += 1) {
+      temp = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = arr[i];
+      arr[i] = temp;
+    }
+  }
+```
+
+The code provided to us directly assigned the (arr.length - i - 1)<sup>th</sup> element of the array to the element at the i<sup>th</sup> index. This meant that the i<sup>th</sup> element was lost completely. The fixed code uses a temporary integer variable to store the value of the (arr.length - i - 1)<sup>th</sup> element. Then, the i<sup>th</sup> element is assigned to the (arr.length - i - 1)<sup>th</sup> element and the the value of the temporary variable is assigned to the element at the i<sup>th</sup> index. This allows the swap to happen without the loss of any information from the array.
+
+# PART 3

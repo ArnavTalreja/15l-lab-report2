@@ -120,3 +120,4 @@ public class ArrayExamples {
 The code provided to us directly assigned the (arr.length - i - 1)<sup>th</sup> element of the array to the element at the i<sup>th</sup> index. This meant that the i<sup>th</sup> element was lost completely. The fixed code uses a temporary integer variable to store the value of the (arr.length - i - 1)<sup>th</sup> element. Then, the i<sup>th</sup> element is assigned to the (arr.length - i - 1)<sup>th</sup> element and the the value of the temporary variable is assigned to the element at the i<sup>th</sup> index. This allows the swap to happen without the loss of any information from the array.
 
 # PART 3
+I had never worked with servers before. Being able to access files created by other users logged onto the same server was extremely cool! Although I had used GitHub before this class, I had never used GitHub to create and publish markdown files. 

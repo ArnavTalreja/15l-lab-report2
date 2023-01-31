@@ -1,5 +1,5 @@
 # PART 1: Server StringServer
-Following is the java code for StringServer:
+Following is the java code for StringServer:-
 ```Java
 import java.io.IOException;
 import java.net.URI;
@@ -38,3 +38,5 @@ class StringServer {
     }
 }
 ```
+The following is the output for the code:-
+!
